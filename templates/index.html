@@ -1,0 +1,56 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Plate Detection</title>
+    <style>
+        body {
+            background-color: #ffdab9;  /* Peach background color */
+            text-align: center;  /* Center-align text in the body */
+            margin: 0;  /* Remove default margin */
+            padding: 0;  /* Remove default padding */
+        }
+        h1 {
+            color: #333;  /* Dark color for the heading */
+            padding-top: 30px;  /* Add top padding to the heading for spacing */
+        }
+        form {
+            margin-top: 20px;  /* Add some top margin to the form */
+        }
+        input[type="file"] {
+            margin-top: 10px;  /* Add some top margin to the file input */
+        }
+        .output-section {
+            margin-top: 20px;  /* Add some top margin to the output section */
+        }
+    </style>
+</head>
+<body>
+    <h1>Number Plate Detection</h1>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <label for="file">Choose a file:</label>
+        <br>
+        <input type="file" name="file" id="file" accept=".png, .jpg, .jpeg, .gif, .mp4" required>
+        <br>
+        <input type="submit" value="Upload and Detect">
+    </form>
+
+    {% if user_image %}
+        <div class="output-section">
+            <h2>Result:</h2>
+            {% if user_image.endswith('.jpg') or user_image.endswith('.png') %}
+                <img src="{{ url_for('static', filename=user_image) }}" alt="Result Image" style="max-width: 100%;">
+            {% elif user_image.endswith('.mp4') %}
+                <video width="640" height="480" controls>                     
+                    <!-- <source src="{{ url_for('static', filename=user_image) }}" type="video/mp4"> -->
+                    <source src="{{ url_for('static', filename='demo.mp4') }}" type="video/mp4">
+
+                </video>
+            {% endif %}
+        </div>
+    {% endif %}
+</body>
+</html>
