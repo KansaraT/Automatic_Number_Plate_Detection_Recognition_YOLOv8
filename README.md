@@ -1,4 +1,4 @@
-<H1 align="center">Automatic Number Plate Detection and Recognition using YOLOv8</H1>
+![image2](https://github.com/KansaraT/Number-Plate-Detection-and-Recognition/assets/91043060/4de93e3d-3116-474b-8c9d-fb4bbe1b8cbc)<H1 align="center">Automatic Number Plate Detection and Recognition using YOLOv8</H1>
 
 
 ## Steps to run Code
@@ -43,4 +43,13 @@ gdown "https://drive.google.com/uc?id=1S6GkQcDq8W0ThaUeZ708UegHIRiVWzTo&confirm=
 ```
 python predict.py model='best.pt' source='demo.mp4'
 ```
+Image
+
+![image2](https://github.com/KansaraT/Number-Plate-Detection-and-Recognition/assets/91043060/4e1af46f-8327-42a2-9bd8-cda83fbf6445)
+
+Video
+
+https://github.com/KansaraT/Number-Plate-Detection-and-Recognition/assets/91043060/e642c08f-0099-45dd-81c3-ec11fb84922b
+
+
 
